@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+html{
+    font-family: sans-serif;
+}
+
+header{
+    height: 70vh;
+    background-image: url("./headerbg.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.btn{
+    display: inline-block;
+    color:white;
+    background-color: #f63854;
+    padding: 16px 12px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: 1px solid #f63854;
+    transition: transform 0.2s;
+}
+.btn-empty{
+    background-color: transparent;
+    color: #f63854;
+}
+
+.btn:hover{
+    background-color: #f63854;
+    color:white;
+    transform: scale(1.2);
+}
