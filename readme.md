@@ -15,3 +15,6 @@ https://www.freecodecamp.org/news/what-is-margin-collapse-and-how-to-avoid-it/
 pseudo class
 https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 :hover :visited :clicked :link
+
+18/08/2023
+https://flexboxfroggy.com/
