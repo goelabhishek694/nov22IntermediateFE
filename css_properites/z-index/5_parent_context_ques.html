@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacking Context</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .parent {
+            margin-left: 1rem;
+            background-color: rgb(146, 85, 202);
+
+        }
+
+        .parent2 {
+            margin-left: 1rem;
+            background-color: rgb(218, 235, 163);
+
+        }
+
+        .box {
+            width: 10rem;
+            height: 10rem;
+            margin-bottom: 1rem;
+            border: dashed;
+        }
+
+        .box-1 {
+            background-color: lightblue;
+        }
+
+        .box-2 {
+            background-color: lightcoral;
+        }
+
+        .box-3 {
+            background-color: lightgreen;
+        }
+
+        .box-4 {
+            background-color: lightsalmon;
+        }
+        /* template starts from here */
+        
+        .box-2 {
+            position: fixed;
+            z-index: 4;
+        }
+        .parent2>.box-2{
+            background-color: gray;
+            position: relative;
+            z-index:-1;
+        }
+        .parent2{
+             position: relative;
+            z-index:4; 
+        }
+        p{
+            position: relative;
+            z-index: 4;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, autem assumenda! Quis quae labore quo?
+        Blanditiis dicta consectetur quas optio dolor. Eligendi hic eveniet sunt nesciunt sequi unde nobis! At?</p>
+   
+    <div class="parent">
+        <div class="box box-1">1</div>
+        <div class="box box-2">2</div>
+        <div class="box box-3">3</div>
+        <div class="box box-4">4</div>
+    </div>
+
+    <div class="parent2">
+        <div class="box box-1"> Parent2 1</div>
+        <div class="box box-2">Parent2 2</div>
+        <div class="box box-3">Parent2 3</div>
+        <div class="box box-4">Parent2 4</div>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus dolore, quas hic neque eaque aliquam
+        fugiat velit, odio quam autem culpa sequi sunt? Provident tempora laboriosam rerum earum, a magni, accusantium
+        illo sint delectus dolores quam possimus debitis vel eos asperiores in aperiam quia architecto ullam reiciendis
+        commodi aliquam cumque ad ipsum! Quod, libero sint! Dicta sed, earum iure cum, dolorem rerum commodi illum quasi
+        harum debitis asperiores. Cum voluptatibus delectus officiis neque, maxime, necessitatibus culpa enim eligendi
+        iusto incidunt aperiam ducimus corporis. Inventore assumenda explicabo quis praesentium molestiae ut dolor omnis
+        eius ullam a, neque, sint quos hic reprehenderit vitae cum eum quidem. Eos repellat, commodi, suscipit eius
+        dolorem asperiores iste unde nobis obcaecati at porro nihil. Nostrum vitae doloremque magni praesentium atque,
+        sed perferendis consequuntur architecto dolorum! Impedit provident labore aut ex molestiae. Voluptatibus ducimus
+        quibusdam necessitatibus? Aliquid natus fugiat, reprehenderit impedit exercitationem doloribus ipsam. Architecto
+        repellendus quaerat minima eveniet aperiam, in sequi nam nihil velit libero placeat ad incidunt dolorem, dolor
+        minus exercitationem. Aperiam hic incidunt provident, sed eum rerum voluptates dolore repellat. Dolores
+        inventore dicta laborum porro ratione perspiciatis tempora ducimus, architecto quasi, error fugit quod, omnis
+        possimus doloremque impedit! Nisi, dolorum consectetur voluptatem libero adipisci id ea veniam quis facere
+        molestiae atque, blanditiis laborum debitis cumque at quos provident dignissimos quod ipsa voluptatum. Omnis
+        culpa voluptatibus deserunt itaque ratione dolor, mollitia ipsum nulla quasi qui doloremque aut error veritatis.
+        Esse soluta ipsam sequi expedita dolores fugit, corrupti maiores, ullam pariatur dignissimos ratione a nostrum
+        voluptate natus iusto! Quaerat consectetur corporis quam non. Incidunt, sit? Quas, quis odit nihil nemo,
+        adipisci quaerat aut, perspiciatis sequi distinctio impedit repellat non porro? Unde in veritatis hic, dolorem
+        ipsam ullam temporibus assumenda quo porro aliquam modi esse ad nesciunt quaerat voluptas possimus.
+        Exercitationem accusamus velit consequatur ipsa itaque rerum!</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat numquam libero ipsa ratione fuga voluptate perferendis cupiditate soluta nostrum expedita, voluptas optio quam recusandae! Minima, placeat. Praesentium at iste aspernatur eum, voluptas libero dolores ipsa corporis provident, perspiciatis qui enim. Obcaecati aspernatur voluptas autem nisi. Culpa totam rem tempora eum illum in nihil enim molestias cum aliquam eligendi, provident tenetur atque dignissimos suscipit voluptatem ad, cumque accusantium magni? Veniam similique harum quis in? Ut corrupti molestias sunt quia odio in enim dicta dolores ipsum, accusamus inventore vitae sequi perferendis qui saepe perspiciatis veniam quibusdam rem libero nesciunt pariatur esse suscipit. Sapiente, iste. Recusandae, commodi! Magni, eos rem nisi in dignissimos voluptates! Incidunt ut blanditiis quo laborum? Excepturi pariatur et dolorum cumque quaerat hic. Ipsa eos ullam sequi expedita. Sint doloribus maxime aperiam neque magnam cumque nihil harum architecto, dolorem eligendi ipsam veritatis hic vero voluptatum pariatur debitis dolor velit quia enim adipisci. Tenetur doloribus asperiores placeat qui ipsa nesciunt. Beatae enim esse sunt fugit aliquam, dignissimos voluptatum? In corporis quasi ab perspiciatis perferendis dolores eos iusto alias illum nobis qui provident praesentium fuga nesciunt magni, itaque voluptatum, nihil possimus repudiandae soluta, est ex numquam. Fugit nam quam explicabo aperiam placeat iure accusamus, suscipit earum omnis nulla sunt? Cumque neque repellat expedita accusamus quas inventore? Quae similique reiciendis nihil assumenda inventore reprehenderit amet! Mollitia veritatis cum, nisi quod corporis id assumenda, dicta architecto quidem minima dolor, sed voluptas debitis explicabo! Ipsam voluptatum vero doloremque et magni officia! Dolore distinctio quasi saepe commodi cupiditate ea omnis? Culpa maiores repudiandae alias qui sit, accusantium corrupti ipsum libero dolorum natus quos itaque mollitia quisquam harum magnam pariatur dicta aut, fugit neque ab recusandae ducimus cum delectus asperiores! Animi debitis assumenda, exercitationem tempore quibusdam laudantium quas esse ut laborum! Necessitatibus magnam laborum odio aperiam deleniti ducimus earum quod quae illo tenetur ratione quibusdam mollitia illum voluptas sit enim quasi doloremque voluptate aliquid eaque totam, eius ut quas! Consectetur reprehenderit voluptate minus praesentium ea! Quasi reprehenderit delectus veniam nam mollitia dolorem fugit placeat deserunt temporibus, animi, adipisci sequi, libero sunt numquam error enim at excepturi tempore fugiat aliquid quae est voluptatibus perspiciatis. Autem ex quae rem nemo voluptatum, id similique nostrum ad obcaecati ipsa sint quod? Ullam delectus quis vel deserunt cupiditate dolores repellendus quam ipsam, voluptatum rem iste blanditiis eligendi similique suscipit odio unde corrupti architecto debitis. Dolor cupiditate reiciendis nam, itaque, molestias veniam blanditiis quo mollitia eius repudiandae illum nihil voluptatibus, voluptatem magni inventore reprehenderit ea quia. Accusantium recusandae nobis facere iusto velit optio quod temporibus maiores, nostrum labore molestiae fugiat blanditiis in assumenda. Dolorum qui repudiandae deserunt. Fuga perspiciatis dolor consequuntur aut, eos laboriosam explicabo odio quae inventore illum, fugiat corporis, veritatis adipisci exercitationem. Repellat, magnam inventore architecto dolor quasi odio neque ea, magni nihil vel aliquam maiores adipisci necessitatibus aliquid harum beatae laudantium qui molestiae explicabo velit ad eius, eos tempora? Ex, perferendis sit provident architecto delectus, autem iure in laborum inventore quidem quaerat nobis aliquam totam nulla. Numquam porro possimus quas, omnis dolorum et nulla provident ipsum odio tempore nisi laboriosam ducimus iusto quam reiciendis delectus deserunt cupiditate neque dolor modi. Odit reiciendis doloribus ipsum autem minima odio. Ea delectus iusto adipisci aperiam eligendi enim! Recusandae magnam dolore error porro dolorem soluta et explicabo sunt fugit, corrupti at cum deleniti corporis laudantium delectus a qui? Rerum nobis consequuntur laborum expedita, optio cupiditate necessitatibus minima quam at? Excepturi dolores modi eos quo aperiam velit nesciunt, quam architecto beatae fugit! Architecto similique, possimus sit hic non minima expedita minus laboriosam quibusdam inventore earum maiores aliquid eius. Recusandae ullam perferendis iure modi ipsam autem ratione unde consectetur? Animi modi ratione vel sit molestiae. Deserunt, praesentium architecto. Soluta laboriosam omnis blanditiis nobis quam dolor, ipsum quae similique nesciunt fugiat, in porro! Deleniti sed delectus facere in. Cum blanditiis officia libero sit unde recusandae reiciendis sunt beatae expedita consequuntur voluptates eius deserunt atque hic at quia accusamus similique magnam cupiditate, quasi fuga nihil dolorum. Voluptatum ab illum impedit laudantium officiis fugit illo, deleniti magni asperiores, pariatur praesentium rem beatae iste placeat magnam voluptate excepturi ducimus sed voluptatem molestiae, et inventore vel. Eum et iure ex porro corrupti. Ab sunt facere saepe, reiciendis perspiciatis quam beatae magnam ex sed voluptate quaerat reprehenderit eius tenetur dolor temporibus mollitia? Provident ex qui veritatis earum doloremque necessitatibus esse itaque accusantium neque ducimus, maxime quo corrupti mollitia unde iste voluptatum quam officiis autem dignissimos tenetur. Nisi sapiente nemo rem expedita iste cumque assumenda velit fuga quia excepturi similique dolor fugiat provident nobis eos, inventore id dolores suscipit. Nobis, distinctio quaerat. Repellendus, laudantium et, eligendi odit ducimus pariatur ab voluptatibus assumenda voluptatum facilis non deserunt explicabo adipisci similique maxime cupiditate delectus, quibusdam sed voluptates. Cum, possimus voluptatum molestias ea voluptates nostrum, cumque et est iure iste amet, molestiae atque quam quas eligendi veniam! Eaque nostrum quidem in voluptas impedit laboriosam alias. A aut eaque sapiente, repudiandae magni culpa quas recusandae nesciunt quam libero accusantium? Porro quibusdam veritatis ipsa consequatur vitae similique dolores magnam soluta earum alias id praesentium laudantium ut, architecto libero, reprehenderit dolorem reiciendis quod et perspiciatis tempora nobis animi. Iusto ab, eaque id quasi alias quas praesentium deleniti voluptatum dolor quisquam odit recusandae veritatis quo assumenda maxime? Repudiandae, possimus saepe. Perspiciatis dolores commodi tempore, eum asperiores impedit numquam nostrum aperiam deleniti cupiditate ipsum quibusdam, eaque omnis architecto nihil distinctio cumque harum! Distinctio tempore ullam, blanditiis vitae odit ducimus suscipit exercitationem dolore. Veritatis incidunt minus quas, sequi possimus consectetur ex libero perspiciatis eligendi tempora consequuntur aut tempore error quaerat iusto mollitia repudiandae labore quos. Quaerat voluptatum voluptatem deserunt id aperiam odit aut laborum quisquam minus recusandae? Expedita atque nisi nam quos dolores quidem ducimus, fugiat temporibus pariatur error modi incidunt voluptates quis? Aliquid officia numquam pariatur laborum, natus impedit sed amet esse vero? Omnis autem hic incidunt, ex blanditiis quo ad, soluta laboriosam fugiat alias libero accusantium repellendus sapiente. Ab magni accusantium omnis cum beatae voluptates blanditiis quod perferendis culpa adipisci sint aut, maiores quas laborum reprehenderit eaque temporibus eveniet pariatur!</p>
+</body>
+
+</html>
+
+
+<!-- 
+Rules :
+1. Positioned element is always above statically placed elements
+2. if both the elements are positioned then the element 
+that is positioned later is placed above.
+3. higher the z-index higher the value 
+4. your z-index depend upon your parent
+ -->
