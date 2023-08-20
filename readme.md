@@ -18,3 +18,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
 
 18/08/2023
 https://flexboxfroggy.com/
+
+20/08/2023
+https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/#alignment-3
+https://cssgridgarden.com/
