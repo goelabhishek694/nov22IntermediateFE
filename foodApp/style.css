@@ -15,9 +15,11 @@ html{
 
 header{
     height: 70vh;
-    background-image: url("./headerbg.jpeg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.603),rgba(0, 0, 0, 0.849)),url("./headerbg.jpeg");
     background-size: cover;
     background-position: center;
+    padding-top: 100px;
+    padding-left: 100px;
 }
 
 .btn{
