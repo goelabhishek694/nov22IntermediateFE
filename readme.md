@@ -22,3 +22,12 @@ https://flexboxfroggy.com/
 20/08/2023
 https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/#alignment-3
 https://cssgridgarden.com/
+
+23/08/2023
+
+Array methods and proerties
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/record-collection
+https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup
+
