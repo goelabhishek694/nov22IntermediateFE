@@ -76,13 +76,21 @@
 //     firstName:"Pluto",
 //     sayHi:function(){
 //         console.log(`${this.firstName} says hi `);
-//         const inner=()=>{ //arrow function
-//             console.log(`${this.firstName} says hi `);
+//         const subInner=()=>{
+//             console.log(this.firstName);
+        
+//             const inner=()=>{ //arrow function
+//                 console.log(`${this.firstName} says hi `);
+//             }
+//             inner() //this-> dog
 //         }
-//         inner() //this-> dog
+//         subInner()
 //     }
 // }
 
 // dog.sayHi(); 
-
-
+// sayHi, this->dog
+//subIneer's this -> this of it's parent i.e. sayHi . now this of sayHi->dog
+// subInner , this-> dog
+//inner's this -> this of it's parent i.e. subInner . now this of subInner->dog
+//inner's this -> dog
