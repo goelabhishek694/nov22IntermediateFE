@@ -44,9 +44,10 @@ Function.prototype.myAplly=function(obj,args){ // collecting the arguments in an
 welcome.myAplly(crick1,["rdrocks@gmail.com",54]) 
 
 //polyfill for bind 
-Function.prototype.myBind=function(obj,...args){
+Function.prototype.myBind=function(...args){
     const fn=this; //this->welcome
     console.log(args);
+    let obj=args.slice
     return function(...args2){
         fn.call(obj,...args,...args2)
     }
