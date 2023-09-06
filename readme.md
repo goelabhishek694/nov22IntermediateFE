@@ -31,3 +31,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/record-collection
 https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/profile-lookup
 
+05/09/2023
+https://javascript.info/property-descriptors
+
+https://blog.bitsrc.io/javascript-object-immutability-1794b49c5255#:~:text=freeze()%20method%20does%20not,a%20nested%20object%20called%20writer.

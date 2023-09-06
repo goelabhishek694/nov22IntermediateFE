@@ -2,9 +2,9 @@
 
 // console.log(counter(0)) //1
 // console.log(counter()(0)) //2
-console.log(counter()()(0)) //3
+// console.log(counter()()(0)) //3
 // console.log(counter()()()(0)) //4
-console.log(counter()()()()()(0)) //6
+// console.log(counter()()()()()(0)) //6
 
 function counter(args){
     let count=0;
@@ -66,37 +66,30 @@ function memoize(fn){
 
 /***************Private variables******/
 function createEvenStack() {
+    const items=[];
     return {
-        items:[],
         push(item) {
             if (item % 2 == 0) {
                 console.log("Is pushed");
-                this.items.push(item);
+                items.push(item);
             }
             else {
                 console.log("Please input even value");
             }
         },
         pop() {
-            return this.items.pop();
+            return items.pop();
         }
     };
 }
-
-// const stack = createEvenStack();
-// stack.push(10);
+//change to shift unshift 
+const stack = createEvenStack();
+stack.push(10);
 // stack.push(5);
 // stack.pop();
-// stack.items; // => [10]
-// console.log(stack.items);
-// stack.items = [10, 100, 1000]; // prevent this behaviour
+stack.items; // => [10]
+console.log(stack.items);
+stack.items = [10, 100, 1000]; // prevent this behaviour
+console.log(stack.items);
 
 
-
-let arr=[10,20,30,40]; 
-let ans=arr.reduce((acc,curr)=>{
-    console.log(acc,curr);
-    acc=acc+curr;
-    return acc;
-})
-console.log(ans);
