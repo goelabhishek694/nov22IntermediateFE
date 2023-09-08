@@ -38,3 +38,6 @@ https://blog.bitsrc.io/javascript-object-immutability-1794b49c5255#:~:text=freez
 
 06/09/2023
 https://developer.mozilla.org/en-US/docs/Web/API/clearTimeout
+
+08/09/2023
+https://javascript.info/promise-basics
