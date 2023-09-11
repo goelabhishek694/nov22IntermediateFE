@@ -89,3 +89,45 @@ console.log("after");
 // })
 
 // console.log("after");
+
+
+
+//how to get rid of calllback hell ?
+let cb=function (err, data) {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log(data + "");
+        fs.readFile('./f2.txt',cb2 )
+    }
+}
+let cb2=function (err, data) {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log(data + "");
+        fs.readFile('./f3.txt', cb3)
+    }
+}
+let cb3=function (err, data) {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log(data + "");
+        fs.readFile('./f4.txt', cb4)
+    }
+}
+
+let cb4=function (err, data) {
+    if (err) {
+        console.log(err);
+    }
+    else {
+        console.log(data + "");
+    }
+}
+
+fs.readFile('./f1.txt', cb);
