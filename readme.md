@@ -45,3 +45,7 @@ https://javascript.info/promise-basics
 
 13/09/2023
 https://github.com/fawazahmed0/currency-api#readme
+
+15/09/2023
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt
+https://www.freecodecamp.org/news/how-did-i-miss-javascript-symbols-c1f1c0e1874a/

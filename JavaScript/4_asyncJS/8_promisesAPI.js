@@ -116,10 +116,10 @@ const freeApi=["https://jsonplaceholder.typicode.com/todos/1","https://jsonplace
 
 
 //Promise.race-> settled -> buzzer game
-let p3=new Promise((resolve,reject)=>setTimeout(()=>resolve("p3 resolved"),2000));
-let p1=new Promise((resolve,reject)=>setTimeout(()=>resolve("p1 resolved"),2000));
-let p2=new Promise((resolve,reject)=>setTimeout(()=>reject("p2 rejected"),1000));
-let promiseArr=[p1,p2,p3];
+// let p3=new Promise((resolve,reject)=>setTimeout(()=>resolve("p3 resolved"),2000));
+// let p1=new Promise((resolve,reject)=>setTimeout(()=>resolve("p1 resolved"),2000));
+// let p2=new Promise((resolve,reject)=>setTimeout(()=>reject("p2 rejected"),1000));
+// let promiseArr=[p1,p2,p3];
 
 // let racePromise=Promise.race(promiseArr);
 
@@ -131,10 +131,36 @@ let promiseArr=[p1,p2,p3];
 
 // Promise.any()-> any -> school race 
 
-let anyPromise=Promise.any(promiseArr);
-anyPromise
-.then(winner=>console.log("yaya",winner))
-.catch(err=>console.log("hello",err))
-.then(()=>console.log("yolo"))
+// let anyPromise=Promise.any(promiseArr);
+// anyPromise
+// .then(winner=>console.log("yaya",winner))
+// .catch(err=>console.log("hello",err))
+// .then(()=>console.log("yolo"))
+
+
+let p1=new Promise(resolve=>setTimeout(()=>resolve("p1 resolved"),3000));
+let p2=new Promise((resolve,reject)=>setTimeout(()=>reject("p2 rejected"),2000));
+let p3=new Promise(resolve=>setTimeout(()=>resolve("p3 resolved"),1000));
+
+let arrayPromise=[p1,p2,p3];
+let fufilledData=[];
+let rejectedData=[];
+let allSettledPromise=Promise.allSettled(arrayPromise);
+allSettledPromise.then(settledArr=>{
+  console.log(settledArr);
+  settledArr.map(promObj=>{
+    if(promObj.status=="fulfilled"){
+      fufilledData.push(promObj.value);
+    }
+    else{
+      rejectedData.push(promObj.reason)
+    }
+  })
+}).then(()=>{
+  console.log(fufilledData);
+  console.log(rejectedData);
+})
+console.log(fufilledData);
+console.log(rejectedData);
 
 
