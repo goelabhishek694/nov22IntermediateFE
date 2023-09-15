@@ -4,20 +4,20 @@ const fs = require('fs'); //node module -> gives us power to read files, copy , 
 
 // we executed our code synchronously
 // console.log("before");
-// let data=fs.readFileSync('./f1.txt');
-// console.log(data+"");
-// console.log("after");
-//we execute our code asynchronously
-// console.log("before");
-// fs.readFile('./f2.txt',function(err,data){
-//     if(err){
-//         console.log(err);
-//     }
-//     else{
-//         console.log(data+"");
-//     }
-// });
-// console.log("after");
+let data=fs.readFileSync('./f1.txt');
+console.log(data+"");
+console.log("after");
+// we execute our code asynchronously
+console.log("before");
+fs.readFile('./f2.txt',function(err,data){
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log(data+"");
+    }
+});
+console.log("after");
 
 
 //i have 2 files, read rthose files and i want data of f1 to be printed then of f2 to be printed 

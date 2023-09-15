@@ -41,3 +41,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/clearTimeout
 
 08/09/2023
 https://javascript.info/promise-basics
+
+
+13/09/2023
+https://github.com/fawazahmed0/currency-api#readme
