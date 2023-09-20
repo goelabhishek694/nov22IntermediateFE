@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Shopping List</h1>
+    <ul>
+        <li>Cornflakes</li>
+    </ul>
+
+    <script>
+        let li=document.createElement("li");
+        li.textContent="Buy coffee";
+        // li.setAttribute("class","list1");
+        let ul=document.querySelector("ul");
+        let a=ul.appendChild(li);
+        console.log(a);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button onclick="cb()">click Me </button> -->
+    <button>click Me </button>
+    <input type="text">
+    <ul></ul>
+
+    <script>
+        let btn=document.querySelector("button");
+        //   event   //reaction
+        btn.onclick=function(){
+            console.log("i have been clicked");
+        }
+        btn.onclick=function (){
+            console.log("i have been clicked by cb2");
+        }
+        function cb(){
+            console.log("i have been clicked");
+        }
+        function cb2(){
+            console.log("i have been clicked by cb2");
+        }
+        //2nd way 
+
+        btn.addEventListener("click",cb)
+        btn.addEventListener("click",cb2)
+
+    </script>
+</body>
+</html>
