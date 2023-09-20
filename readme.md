@@ -49,3 +49,6 @@ https://github.com/fawazahmed0/currency-api#readme
 15/09/2023
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt
 https://www.freecodecamp.org/news/how-did-i-miss-javascript-symbols-c1f1c0e1874a/
+
+20/09/2023
+https://dev.to/ibn_abubakre/append-vs-appendchild-a4m
