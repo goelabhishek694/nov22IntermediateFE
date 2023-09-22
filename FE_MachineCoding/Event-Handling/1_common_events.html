@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: rgb(74, 171, 52);
+        }
+        .box2{
+            height: 60px;
+            width: 60px;
+            background-color: rgb(214, 235, 24);
+        }
+    </style>
+</head>
+<body>
+        <!--
+        Different ways to interact with a web page 
+ Mouse : hover, click mousedown,mouseup, scroll, doubleclick,
+
+ Keyboard : keyup , keydown , keypress= keydown+keyup
+    -->
+
+    <div class="box">
+        <div class="box2"></div>
+    </div>
+    <input type="text">
+    <script>
+        const box=document.querySelector(".box");
+
+        // box.addEventListener("mouseover",function(){
+        //     console.log("hover box occured");
+        // })
+
+        // box.addEventListener("mouseenter",function(){
+        //     console.log("hover box occured");
+        // })
+
+        // box.addEventListener("mouseleave",function(){
+        //     console.log("mouseleave occured");
+        // })
+
+        //click=mousedown+mouseup
+        // box.addEventListener("click",function(){
+        //     console.log("click occured");
+        // })
+
+        box.addEventListener("mousedown",function(){
+            console.log("mousedown click occured");
+        })
+
+        box.addEventListener("mouseup",function(){
+            console.log("mouseup click occured");
+        })
+
+        box.addEventListener("dblclick",function(){
+            console.log("double click occured");
+        })
+
+        let input=document.querySelector("input");
+        input.addEventListener("keydown",function(e){
+            console.log("keydown");
+            console.log(e);
+        })
+        // input.addEventListener("keyup",function(){
+        //     console.log("key is released");
+        // })
+        
+        input.addEventListener("keypress",function(e){
+            console.log("keypress");
+            console.log(e);
+        })
+        
+    </script>
+</body>
+</html>

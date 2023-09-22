@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box{
+            height: 200px;
+            width: 200px;
+            background-color: salmon;
+        }
+    </style>
 </head>
 <body>
-    <!-- <button onclick="cb()">click Me </button> -->
+    <!-- adding event handler via html -->
+    <button onclick="cb()">click Me </button>
     <button>click Me </button>
     <input type="text">
     <ul></ul>
+    <div class="box">
+    </div>
 
     <script>
         let btn=document.querySelector("button");
-        //   event   //reaction
+        //   event   //reaction 
         btn.onclick=function(){
             console.log("i have been clicked");
         }
@@ -30,6 +40,16 @@
 
         btn.addEventListener("click",cb)
         btn.addEventListener("click",cb2)
+
+        function handleBoxClick(){ 
+            console.log("box is clicked");   
+        }
+        const box=document.getElementsByClassName("box")[0];
+        box.addEventListener("click",handleBoxClick)
+        // box.addEventListener("click",handleBoxClick,{once:true})
+        setTimeout(()=>{
+            box.removeEventListener("click",handleBoxClick);
+        },3000);
 
     </script>
 </body>
