@@ -52,3 +52,8 @@ https://www.freecodecamp.org/news/how-did-i-miss-javascript-symbols-c1f1c0e1874a
 
 20/09/2023
 https://dev.to/ibn_abubakre/append-vs-appendchild-a4m
+
+22/09/2023
+https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Using_Touch_Events
+https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
+
