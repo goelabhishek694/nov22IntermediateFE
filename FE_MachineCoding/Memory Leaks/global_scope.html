@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        "use strict"
+        b=15;
+        //problem of scope pollution
+        function abc(){
+            console.log(b);
+            c="Hi People";
+            b++;
+        }
+        abc();
+        console.log("c is ",c);
+        b++;
+        console.log(b);
+    </script>
+</body>
+</html>

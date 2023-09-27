@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        <h3>I am h3</h3>
+    </p>
+    <script>
+        let a=document.querySelector("h3");
+        let p=document.querySelector("p");
+
+        a.remove();
+        console.log(a);
+
+        //this will make js engine garbage collect the elemnt object i.e h3. this avoids memory leak andimporves website performance 
+        a=null;
+        console.log(a);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Closure</h1>
+    <script>
+        let theThing=null;
+        let replaceThing=function(){
+            console.log("something");
+            let originalThing=theThing;
+            let unused=function(){
+                if(originalThing){
+                    console.log("hi");
+                }
+            }
+            theThing={
+                longStr:new Array(10000000),
+                someMethod:function(){
+                    console.log("Bye");
+                }
+            }
+        }
+
+        setInterval(()=>replaceThing(),1000);
+    </script>
+</body>
+</html>
