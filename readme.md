@@ -57,3 +57,4 @@ https://dev.to/ibn_abubakre/append-vs-appendchild-a4m
 https://developer.mozilla.org/en-US/docs/Web/API/Touch_events/Using_Touch_Events
 https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset
 
+https://javascript.info/fetch-abort
