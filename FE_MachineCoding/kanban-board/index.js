@@ -10,6 +10,20 @@ const colorArray=["pink","blue","green","purple"];
 let deleteFlag=false;
 let currentColor='green';
 var uid = new ShortUniqueId({ length: 5 });
+let allTickets=localStorage.getItem("localTickets")|| [];
+
+//will add all tickets onto UI
+if(typeof allTickets=="string"){
+    allTickets=JSON.parse(allTickets);
+    populateUI()
+}
+
+function populateUI(){
+    allTickets.forEach(ticketObj=>{
+        let {content,color,id}=ticketObj;
+        createTicket(content,color,id);
+    })
+}
 
 
 // toolbox-cont
@@ -78,8 +92,8 @@ modal.addEventListener("keypress",function(e){
     modal.style.display="none"
 })
 
-function createTicket(content,color){
-    const id=uid.rnd();
+function createTicket(content,color,tid){
+    const id=tid||uid.rnd();
     console.log(id);
     const ticketContainer=document.createElement("div");
     ticketContainer.classList.add("ticket-cont")
@@ -97,19 +111,32 @@ function createTicket(content,color){
     deleteListeners(ticketContainer,id);
     addLockUnlock(ticketArea,lockBtn,id);
     addColourChangeListeners(ticketColor,id)
+
+    //when task is created for the first time , we need to save it on LS
+    if(!tid){ //new ticket , store in LS
+        let ticketObj={
+            id,color,content
+        }
+        allTickets.push(ticketObj)
+        updateLocalStorage()
+    }
 }
 
 
-function deleteListeners(ticketContainer,id){
+function deleteListeners(ticketContainer,tid){
     ticketContainer.addEventListener("click",function(){
         if(deleteFlag){
             ticketContainer.remove();
             //update ls 
+            let restOfTheTickets=allTickets.filter(obj=> obj.id!==tid)
+            allTickets=restOfTheTickets;
+            updateLocalStorage();
+
         }
     })
 }
 
-function addLockUnlock(ticketArea,lockBtn,id){
+function addLockUnlock(ticketArea,lockBtn,tid){
     lockBtn.addEventListener("click",function(){
         let isLocked=lockBtn.children[0].classList.contains("fa-lock");
         if(isLocked){
@@ -122,10 +149,14 @@ function addLockUnlock(ticketArea,lockBtn,id){
             lockBtn.children[0].classList.remove("fa-lock-open")
             lockBtn.children[0].classList.add("fa-lock")
         }
+        let ticketObj=allTickets.find(obj=> obj.id==tid)
+        ticketObj.content=ticketArea.textContent;
+        updateLocalStorage();
+
     })
 }
 
-function addColourChangeListeners(ticketColorEle){
+function addColourChangeListeners(ticketColorEle,tid){
     ticketColorEle.addEventListener("click",function(e){
         let color=ticketColorEle.classList[1];
         let colorIdx=colorArray.indexOf(color);
@@ -133,5 +164,15 @@ function addColourChangeListeners(ticketColorEle){
         let newColor=colorArray[newIdx];
         ticketColorEle.classList.remove(color)
         ticketColorEle.classList.add(newColor)
+        
+            let ticketObj=allTickets.find(obj=> obj.id==tid)
+            ticketObj.color=newColor;
+            updateLocalStorage();
+    
     })
+}
+
+
+function updateLocalStorage(){
+    localStorage.setItem("localTickets",JSON.stringify(allTickets));
 }
