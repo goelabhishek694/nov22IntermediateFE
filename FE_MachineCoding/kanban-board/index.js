@@ -7,6 +7,8 @@ const priorityColorArray=prioritySetModal.children;
 const textArea=modal.children[0];
 const mainContainer=document.querySelector(".main-cont");
 const colorArray=["pink","blue","green","purple"];
+const pendingContainer=document.querySelector(".pending-cont")
+const completedContainer=document.querySelector(".completed-cont")
 let deleteFlag=false;
 let currentColor='green';
 var uid = new ShortUniqueId({ length: 5 });
@@ -20,8 +22,8 @@ if(typeof allTickets=="string"){
 
 function populateUI(){
     allTickets.forEach(ticketObj=>{
-        let {content,color,id}=ticketObj;
-        createTicket(content,color,id);
+        let {content,color,id,isPending}=ticketObj;
+        createTicket(content,color,id,isPending);
     })
 }
 
@@ -92,18 +94,21 @@ modal.addEventListener("keypress",function(e){
     modal.style.display="none"
 })
 
-function createTicket(content,color,tid){
+function createTicket(content,color,tid,isPending=true){
     const id=tid||uid.rnd();
     console.log(id);
     const ticketContainer=document.createElement("div");
     ticketContainer.classList.add("ticket-cont")
+    ticketContainer.setAttribute("draggable",true);
     ticketContainer.innerHTML=`<div class="ticket-color ${color}"></div>
     <div class="ticket-id">#${id}</div>
     <div class="ticket-area">${content}</div>
     <div class="lock-unlock">
         <i class="fa-solid fa-lock"></i>
     </div>`
-    mainContainer.appendChild(ticketContainer);
+    if(isPending){
+        pendingContainer.appendChild(ticketContainer);
+    }else completedContainer.appendChild(ticketContainer);
 
     const ticketColor=ticketContainer.querySelector(".ticket-color");
     const ticketArea=ticketContainer.querySelector(".ticket-area");
@@ -115,7 +120,7 @@ function createTicket(content,color,tid){
     //when task is created for the first time , we need to save it on LS
     if(!tid){ //new ticket , store in LS
         let ticketObj={
-            id,color,content
+            id,color,content,isPending:true
         }
         allTickets.push(ticketObj)
         updateLocalStorage()
