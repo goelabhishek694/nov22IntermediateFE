@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- algorithm to efficiently create and manage FE -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- react dom -> uses react to update the dom  -->
+   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <!-- <component></component> -->
+    </div>
+    <script>
+        // js + html = jsx 
+        //component -> is a function which return html 
+        function Hello(){
+            let name="Abhishek";
+            let age="30";
+            return `<div id="section">
+                <h1 id="heading">Hi i am ${name}, i am ${age} years old</h1>
+                </div>`
+        }
+
+
+        // const divEle=document.getElementById("root")
+        // const ele=document.createElement("h2");
+        // divEle.appendChild(ele)
+        
+        ReactDOM.render(Hello,document.getElementById("root"))
+    </script>
+</body>
+</html>

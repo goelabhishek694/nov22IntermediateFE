@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- algorithm to efficiently create and manage FE -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <!-- react dom -> uses react to update the dom  -->
+   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <!-- <component></component> -->
+    </div>
+    <script type="text/babel">
+        // js + html = jsx 
+        //component -> is a function which return html 
+        function Hello(propsObj){
+            console.log(propsObj); //obj
+            const {name,age}=propsObj;
+            // const h1=React.createElement("h1",{id:"heading"},"hello i am jsx");
+            // const jsxDiv=React.createElement("div",{id:"section", onClick:function(){
+            //     console.log("i was clicked");
+            // }},h1);
+            // console.log(jsxDiv);
+            // return jsxDiv
+
+            return <div id="section">
+                <h1 id="heading">Hi i am {name}, i am {age} years old</h1>
+                </div>
+        }
+
+
+        // const divEle=document.getElementById("root")
+        // const ele=document.createElement("h2");
+        // divEle.appendChild(ele)
+        
+        ReactDOM.render(<Hello name={"Abhishek"} age={30}></Hello>,document.getElementById("root"))
+    </script>
+</body>
+</html>
