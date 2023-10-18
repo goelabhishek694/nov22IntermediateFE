@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function Counter(){
+    //initila value,fn used to update value , initila state
+            let [count,setCount]=React.useState(0);
+            const handleIncrement=()=>{
+                console.log("counter incremented");
+                setCount(count+1);
+            }
+
+            const handleDecrement=()=>{
+                console.log("counter decremented");
+                if(count<1){
+                    alert("Count cannot be neagtive")
+                    return
+
+                }
+                setCount(count-1);
+            }
+            return (
+                <div>
+                    <button onClick={handleIncrement}>+</button>
+                    <p>{count}</p>
+                    <button onClick={handleDecrement}>-</button>
+                </div>
+            )
+        }
+    ReactDOM.render(<Counter/>,document.getElementById("root"));
+    </script>
+</body>
+</html>

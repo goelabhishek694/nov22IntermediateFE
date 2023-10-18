@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        function InputContainer(){
+            const [inputValue,setValue]=React.useState("");
+            const handleValue=(e)=>{
+                console.log(e.target.value);
+                setValue(e.target.value+"1")
+                // hello-> h1e1l1l1o1
+            }
+            return (
+                <div>
+                    {/*we are handling the ui update of input with state*/}
+                    <input onChange={handleValue} type="text" value={inputValue}></input>
+                    <button>Add</button>
+                </div>
+            )
+        }
+    ReactDOM.render(<InputContainer/>,document.getElementById("root"));
+    </script>
+</body>
+</html>
