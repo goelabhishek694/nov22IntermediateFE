@@ -21,20 +21,32 @@ function Variations() {
         setTaskList(restOftasks);
     }
 
-    // function firstCb() {
-    //     console.log("first useEffect");
-    // }
-    // useEffect(firstCb,[]);
+    function firstCb() {
+        console.log("first useEffect");
+    // cleanup function -> before calling of the next useEffect 
+        return ()=>{
+            console.log("cleanup is called");
+        }
+    }
+    useEffect(firstCb,[]);
 
     // function secondCb() {
     //     console.log("second useEffect");
+    //     //cleanup function -> before calling of the next useEffect 
+    //     return ()=>{
+    //         console.log("cleanup is called");
+    //     }
     // }
     // useEffect(secondCb);
 
-    function thirdCb() {
-        console.log("third useEffect");
-    }
-    useEffect(thirdCb,[taskList]);
+    // function thirdCb() {
+    //     console.log("third useEffect");
+    //     //cleanup function -> before calling of the next useEffect 
+    //     return ()=>{
+    //         console.log("cleanup is called");
+    //     }
+    // }
+    // useEffect(thirdCb,[taskList]);
     
 
     console.log("render");
