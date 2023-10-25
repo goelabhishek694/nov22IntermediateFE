@@ -1,56 +1,44 @@
-import {useEffect,useState} from 'react'
-
+import { useEffect, useState } from 'react'
+import ProductList from './ProductList';
+import Categories from './Categories';
+import getFilSortCatData from "../helper/sortingFlteringCategory";
+import SearchSort from './SearchSort';
 function Product() {
-  const [products,setProducts]=useState(null);
-  const [searchTerm,setSearchTerm]=useState("");
-  useEffect(()=>{
-    async function getProducts(){
-        let res=await fetch(`https://fakestoreapi.com/products`)
-        let data=await res.json();
-        console.log(data);
-        setProducts(data);
+  const [products, setProducts] = useState(null);
+  const [currCategory, setCurrCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [sortState, setSortState] = useState("");
+  const[pageNum,setPageNum]=useState(1);
+  const pageSize=5;
+  const [clname,setClname]=useState("hello");
+ 
+  useEffect(() => {
+    async function getProducts() {
+      let res = await fetch(`https://fakestoreapi.com/products`)
+      let data = await res.json();
+      console.log(data);
+      setProducts(data);
     }
     getProducts()
-},[])
+  }, [])
 
-const handleInput=(e)=>{
-  console.log("items searched", e.target.value);
-  setSearchTerm(e.target.value);
-}
+  const data=getFilSortCatData(products,searchTerm,sortState,currCategory,pageNum,pageSize);
 
-let filteredArr=products;
-if(searchTerm!=""){
-  console.log(searchTerm);
-  filteredArr=filteredArr.filter((product)=>{
-    let lowerSearchedTerm=searchTerm.toLowerCase();
-    let lowerTitle=product.title.toLowerCase();
-    return lowerTitle.includes(lowerSearchedTerm);
-  })
-}
-return (
+  return (
     <>
-    <header className='nav-wrapper'>
-      <input className='search-input' type='text' value={searchTerm} onChange={handleInput}>
-      </input>
-    </header>
-    <main className='product-wrapper'>
-{filteredArr==null?<h1>Loading....</h1>:<>
-{
-filteredArr.map(({id,image,title,price})=>(
-    <>
-    <div key={id} className='product'>
-      <img src={image} className="product-image"/>
-    <div className='product-meta'>
-      <p className='product-title'>{title}</p>
-      <p className='Price'>$ {price}</p>
-    </div>
-    </div>
+      <header className='nav-wrapper'>
+        <div className="search-sort-wrapper">
+          <SearchSort setSearchTerm={setSearchTerm} setSortState={setSortState} searchTerm={searchTerm}></SearchSort>
+        </div>
+        <div className="categories-container">
+        <Categories fn={setCurrCategory} ></Categories>
+        </div>
+      </header>
+      <main className='product-wrapper'>
+        <ProductList data={data}></ProductList>
+      </main>
     </>
-    ))
-}</>}
-</main>
-</>
-)
+  )
 }
 
 export default Product

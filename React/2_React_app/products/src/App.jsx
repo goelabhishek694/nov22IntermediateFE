@@ -7,6 +7,7 @@ import About from './components/About'
 import PageNotFound from './components/PageNotFound'
 import Routing from './poc/Routing'
 import "./App.css"
+// import "./Navbar.css"
 function App() {
   const [count, setCount] = useState(0)
 
