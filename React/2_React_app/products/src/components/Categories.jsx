@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-function Categories({fn:setCurrCategory}) {
+function Categories({fn:setCurrCategory,setPageNum}) {
     const [categories, setCategories] = useState(null);
     
     useEffect(() => {
@@ -15,8 +15,12 @@ function Categories({fn:setCurrCategory}) {
   return (
     <>
     {categories == null ? <h1>Loading....</h1> :<>
-        <button className="category" onClick={()=>setCurrCategory("All")}>All</button>
-          {categories.map(category=>(<button className="category" onClick={()=>setCurrCategory(category)}>{category.charAt(0).toUpperCase()+category.slice(1)}</button>))}
+        <button className="category" onClick={()=>{
+          setCurrCategory("All")
+          setPageNum(1)}}>All</button>
+          {categories.map(category=>(<button className="category" onClick={()=>{
+            setCurrCategory(category)
+            setPageNum(1)}}>{category.charAt(0).toUpperCase()+category.slice(1)}</button>))}
           </>}
     </>
   )

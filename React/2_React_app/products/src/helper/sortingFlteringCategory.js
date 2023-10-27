@@ -36,10 +36,12 @@ function getFilSortCatData(products, searchTerm, sortState, currCategory,pageNum
     let eidx=sidx+pageSize;
 
     let paginatedData=filteredSortedCategorizedArr;
+    console.log(paginatedData);
+    paginatedData=paginatedData.slice(sidx,eidx);
+    console.log(paginatedData);
+    let totalPages=Math.ceil(filteredSortedCategorizedArr.length/pageSize);
 
-    paginatedData=paginatedData.slice(sidx,eidx)
-
-    return paginatedData;
+    return {paginatedData,totalPages};
 
 }
 

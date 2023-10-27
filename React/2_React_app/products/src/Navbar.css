@@ -1,5 +1,7 @@
 .navbar{
-    display:"flex";
-    justify-content:"flex-start";
-    align-items:"center"
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    gap: 2rem;
+    list-style: none;
 }
