@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import {Routes, Route, Navigate, Link, useParams} from "react-router-dom"
+import {Routes, Route, Navigate, Link, useParams, Outlet} from "react-router-dom"
 function Routing() {
   return (
     <>
@@ -13,7 +13,12 @@ function Routing() {
     </ul>
     <Routes>
       <Route path="/" element={<Home></Home>}></Route>
-      <Route path="/about" element={<About></About>}></Route>
+      {/* parent route */}
+      <Route path="/about" element={<About></About>}>
+        {/* sub routes */}
+        <Route path='company' element={<Company></Company>}></Route>
+        <Route path='ceo' element={<Ceo></Ceo>}></Route>
+      </Route>
       <Route path="/home" element={<Navigate to="/"></Navigate>}></Route>
       {/* id can be dynamic  */}
       <Route path="/users/:id" element={<User></User>}></Route>
@@ -31,6 +36,20 @@ function About(){
     return <>
     <div>About Page of company</div>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe aspernatur quod magnam. Laborum ut sunt expedita nostrum magnam nemo, dolor repellendus soluta neque reprehenderit. Inventore ad necessitatibus accusamus molestias quidem!</p>
+    <Outlet></Outlet>
+    </>
+}
+
+function Company(){
+    return <>
+    <h1>i am company</h1>
+    <Outlet></Outlet>
+    </>
+}
+
+function Ceo(){
+    return <>
+    <h1>i am ceo</h1>
     </>
 }
 
