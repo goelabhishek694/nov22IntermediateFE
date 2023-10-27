@@ -61,3 +61,6 @@ https://javascript.info/fetch-abort
 
 16/10/2023
 https://babel-repl-clone.vercel.app/ 
+
+27/10/2023
+https://reactrouter.com/en/main/start/tutorial#nested-routes
