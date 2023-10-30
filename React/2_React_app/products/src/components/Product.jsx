@@ -1,18 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import ProductList from './ProductList';
 import Categories from './Categories';
 import getFilSortCatData from "../helper/sortingFlteringCategory";
 import SearchSort from './SearchSort';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import { PaginationWrapper } from './context/PaginationContext';
 function Product() {
+  const { pageNum,setPageNum,pageSize,setPageSize}=useContext(PaginationWrapper);
   const [products, setProducts] = useState([]);
   const [currCategory, setCurrCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
   const [sortState, setSortState] = useState("");
-  const [pageNum, setPageNum] = useState(1);
-  const pageSize = 5;
-  const [clname, setClname] = useState("hello");
 
   useEffect(() => {
     async function getProducts() {
@@ -32,10 +31,10 @@ function Product() {
     <>
       <header className='nav-wrapper'>
         <div className="search-sort-wrapper">
-          <SearchSort setSearchTerm={setSearchTerm} setSortState={setSortState} searchTerm={searchTerm} setPageNum={setPageNum}></SearchSort>
+          <SearchSort setSearchTerm={setSearchTerm} setSortState={setSortState} searchTerm={searchTerm}></SearchSort>
         </div>
         <div className="categories-container">
-          <Categories fn={setCurrCategory} setPageNum={setPageNum}></Categories>
+          <Categories fn={setCurrCategory}></Categories>
         </div>
       </header>
       <main className='product-wrapper'>

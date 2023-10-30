@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
-
-function Categories({fn:setCurrCategory,setPageNum}) {
+import { useContext, useEffect, useState } from 'react'
+import { usePaginationContext } from './context/PaginationContext';
+function Categories({fn:setCurrCategory}) {
     const [categories, setCategories] = useState(null);
-    
+    const {setPageNum}=usePaginationContext();
     useEffect(() => {
         async function getCategories() {
           let res = await fetch(`https://fakestoreapi.com/products/categories`)
