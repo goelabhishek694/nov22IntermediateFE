@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react'
-import { usePaginationContext } from './context/PaginationContext';
+import { usePaginationContext } from '../context/PaginationContext';
 function Categories({fn:setCurrCategory}) {
     const [categories, setCategories] = useState(null);
     const {setPageNum}=usePaginationContext();

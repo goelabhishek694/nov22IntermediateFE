@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react'
-import ProductList from './ProductList';
-import Categories from './Categories';
+import ProductList from '../components/ProductList';
+import Categories from '../components/Categories';
 import getFilSortCatData from "../helper/sortingFlteringCategory";
-import SearchSort from './SearchSort';
+import SearchSort from '../components/SearchSort';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
-import { PaginationWrapper } from './context/PaginationContext';
+import { PaginationWrapper } from '../context/PaginationContext';
 function Product() {
   const { pageNum,setPageNum,pageSize,setPageSize}=useContext(PaginationWrapper);
   const [products, setProducts] = useState([]);

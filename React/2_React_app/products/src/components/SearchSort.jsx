@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from 'react'
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-import { usePaginationContext } from './context/PaginationContext';
+import { usePaginationContext } from '../context/PaginationContext';
 function SearchSort({setSearchTerm,setSortState, searchTerm}) {
     const {setPageNum}=usePaginationContext();
     const handleInput = (e) => {

@@ -88,3 +88,18 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.add_remove_product{
+  display: flex;
+  justify-content: center;
+}
+
+.add_remove_border{
+  border: 1px solid grey;
+}
+
+.cart-product-wrapper{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
